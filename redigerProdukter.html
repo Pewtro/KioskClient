@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Admin - rediger</title>
+</head>
+<body>
+<br/>
+<br/>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="logoutButton">Log ud
+</button>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="kioskButton">Kiosken
+</button>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="adminButton">Admin
+</button>
+<br/>
+<br/>
+
+<h2 style="color: ghostwhite; text-align: center;">Redigering af produkter</h2>
+<br/>
+<br/>
+<div style="margin-left: 5%; margin-right: 5%">
+    <input type="text" id="searchProducts" onkeyup="searchFunction()" placeholder="Search for products.."
+           title="Type in a product name" autofocus>
+    <table class="table table-dark" id="productTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Active</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="productTableBody">
+        </tbody>
+    </table>
+</div>
+<div id="opdaterProduktModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Opdater produkt</h4>
+            </div>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterProductName">Product name:</label>
+                <input placeholder="Product name" type="text" class="form-control" id="opdaterProductName">
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterProductPrice">Price:</label>
+                <input placeholder="Product price" type="text" class="form-control" id="opdaterProductPrice">
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterProductStock">Stock:</label>
+                <input placeholder="Product stock" type="text" class="form-control" id="opdaterProductStock">
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterProductActive">Is Active: </label>
+                <br/>
+                <select id="opdaterProductActive">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="opdaterProdukt">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger pull-left" id="sletProdukt">Delete product</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/js/jquery-3.4.1.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/redigerProdukter.js"></script>
+<script src="js/productAndUserHandler.js"></script>
+<script>
+    function searchFunction() {
+        // Declare variables
+        let input, filter, table, tr, td, i;
+        input = document.getElementById("searchProducts");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("productTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

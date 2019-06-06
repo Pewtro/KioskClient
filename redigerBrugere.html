@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Admin - rediger</title>
+</head>
+<body>
+<br/>
+<br/>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="logoutButton">Log ud
+</button>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="kioskButton">Kiosken
+</button>
+<button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+        id="adminButton">Admin
+</button>
+<br/>
+<br/>
+
+<h2 style="color: ghostwhite; text-align: center;">Redigering af brugere</h2>
+<br/>
+<br/>
+<div style="margin-left: 5%; margin-right: 5%">
+    <input type="text" id="searchUsers" onkeyup="searchFunction()" placeholder="Search for users.."
+           title="Type in a user name" autofocus>
+    <table class="table table-dark" id="userTable">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>RFID</th>
+            <th>Admin</th>
+            <th>Sex</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody id="userTableBody">
+        </tbody>
+    </table>
+</div>
+<div id="opdaterBrugerModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Opdater bruger</h4>
+            </div>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterBrugerNavn">User name:</label>
+                <input placeholder="Name" type="text" class="form-control" id="opdaterBrugerNavn">
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterBrugerRFID">RFID:</label>
+                <input placeholder="RFID" type="text" class="form-control" id="opdaterBrugerRFID">
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterBrugerAdmin">Admin: </label>
+                <br/>
+                <select id="opdaterBrugerAdmin">
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="adminOpretNyt col-lg-4">
+                <label for="opdaterBrugerKoen">Sex: </label>
+                <br/>
+                <select id="opdaterBrugerKoen">
+                    <option value="M">Male</option>
+                    <option value="F">Female</option>
+                </select>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" id="opdaterBruger">Submit</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger pull-left" id="sletBruger">Delete user</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="lib/js/jquery-3.4.1.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/redigerBrugere.js"></script>
+<script src="js/productAndUserHandler.js"></script>
+<script>
+    function searchFunction() {
+        // Declare variables
+        let input, filter, table, tr, td, i;
+        input = document.getElementById("searchUsers");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("userTable");
+        tr = table.getElementsByTagName("tr");
+
+        // Loop through all table rows, and hide those who don't match the search query
+        for (i = 0; i < tr.length; i++) {
+            td = tr[i].getElementsByTagName("td")[1];
+            if (td) {
+                if (td.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    tr[i].style.display = "";
+                } else {
+                    tr[i].style.display = "none";
+                }
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

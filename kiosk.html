@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="css/kiosk.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>DØK Kiosk</title>
+</head>
+<body class="loginScreen">
+<br/>
+<br>
+<div id="buttons">
+    <button style="margin-right: 20px; margin-top: 5px" class="btn btn-primary pull-right"
+            id="logoutButton">Log ud
+    </button>
+</div>
+
+
+<h3 id="welcomeHeader">Velkommen </h3>
+
+<br/>
+<br/>
+<br/>
+<div id="productsTable" class="col-md-8"></div>
+<div id="kurv" class="col-md-4">
+    <table class="table">
+        <thead>
+        <th><img src="images/kurv.png" width="50" height="50"></th>
+        <th>Vare:</th>
+        <th>Antal:</th>
+        <th></th>
+        <th></th>
+        </thead>
+        <tbody id="kurvTabel">
+        </tbody>
+    </table>
+    <button id="købKnap" class="btn btn-primary">Køb</button>
+</div>
+<script src="lib/js/jquery-3.4.1.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/kiosk.js"></script>
+
+</body>
+</html>

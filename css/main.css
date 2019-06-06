@@ -1,0 +1,96 @@
+#overlay {
+    position: fixed; /* Sit on top of the page content */
+    display: none; /* Hidden by default */
+    width: 100%; /* Full width (cover the whole page) */
+    height: 100%; /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(220, 220, 220, 1); /* Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer; /* Add a pointer on hover */
+}
+
+.overlayTable {
+    width: 75%;
+    max-width: 75%;
+    margin-bottom: 20px;
+    margin-left: 20%;
+}
+
+body {
+    background-image: url("../images/baggrund.jpg");
+}
+
+.table-dark {
+    color: #fff;
+    background-color: #212529;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+    border-color: #32383e;
+}
+
+.table-dark.table-bordered {
+    border: 0;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-dark.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+.table-dark,
+.table-dark > th,
+.table-dark > td {
+    background-color: #c6c8ca;
+}
+
+.table-hover .table-dark:hover {
+    background-color: #b9bbbe;
+}
+
+.table-hover .table-dark:hover > td,
+.table-hover .table-dark:hover > th {
+    background-color: #b9bbbe;
+}
+
+.table-dark {
+    color: #fff;
+    background-color: #212529;
+}
+
+.table-dark th,
+.table-dark td,
+.table-dark thead th {
+    border-color: #32383e;
+}
+
+.table-dark.table-bordered {
+    border: 0;
+}
+
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.table-dark.table-hover tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.075);
+}
+
+#searchProducts, #searchUsers {
+    background-image: url('/DIS_HCI/images/searchicon.png'); /* Add a search icon to input */
+    background-position: 10px 12px; /* Position the search icon */
+    background-repeat: no-repeat; /* Do not repeat the icon image */
+    width: 100%; /* Full-width */
+    font-size: 16px; /* Increase font-size */
+    padding: 12px 20px 12px 40px; /* Add some padding */
+    border: 1px solid #ddd; /* Add a grey border */
+    margin-bottom: 12px; /* Add some space below the input */
+}

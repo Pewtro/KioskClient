@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/main.css">
+    <meta charset="UTF-8">
+    <title>Login - DØK Kiosk</title>
+</head>
+<body class="loginScreen">
+<main>
+    <h1>DØK KIOSK</h1>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+    <h3>Scan RFID to login</h3>
+    <p id="error"></p>
+
+    <label for="rfidInput"></label>
+    <input type="text" id="rfidInput"
+           autocomplete="off"
+           autofocus>
+    <br/>
+    <br/>
+    <button type="submit" id="loginBtn">Log in
+    </button>
+</main>
+<footer>
+    <div class="loginScreenFooter">
+        <p>2018 © All rights reserved - XB02</p>
+    </div>
+</footer>
+
+<script src="lib/js/jquery-3.4.1.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>

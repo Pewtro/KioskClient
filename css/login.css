@@ -1,0 +1,27 @@
+.loginScreen {
+    text-align: center;
+    color: ghostwhite;
+}
+
+.loginScreenFooter {
+    top: 90%;
+    position: fixed;
+    left: 42%;
+    opacity: 0.6;
+}
+
+#rfidInput:focus {
+    outline-width: 0;
+}
+
+#rfidInput {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+#loginBtn {
+    color: rgba(0, 0, 0, 0);
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+}

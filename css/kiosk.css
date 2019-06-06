@@ -1,0 +1,32 @@
+.loginScreen {
+    text-align: center;
+    background-color: #1b4f72;
+    color: ghostwhite;
+}
+
+#thead {
+    text-align: center;
+}
+
+.kurv-img {
+    display: block;
+    max-width: 120px;
+    max-height: 48px;
+    width: auto;
+    height: auto;
+}
+
+#købKnap {
+    padding: 3px 18px;
+    font-size: 20px;
+}
+
+.kioskKnap {
+    background-color: #1b6d85;
+    border-radius: 25px;
+    padding: 2px 12px;
+}
+
+.kioskVare {
+    margin-bottom: 15px;
+}

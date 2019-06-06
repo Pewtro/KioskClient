@@ -1,0 +1,27 @@
+.adminButton {
+    margin-top: 20px;
+    margin-left: 30px;
+}
+
+.adminButtonDiv {
+    margin-left: 170px;
+}
+
+.adminOpretNyt {
+    margin-bottom: 15px;
+    margin-left: 15px;
+    float: left;
+}
+
+#hentDoekDataProgress {
+    width: 100%;
+    background-color: #ddd;
+    text-align: center;
+}
+
+#hentDoekDataProgressBar {
+    width: 0;
+    background-color: #4CAF50;
+    line-height: 30px;
+    text-align: right;
+}
